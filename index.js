@@ -30,7 +30,7 @@ app.get('/', (req, res) => {
 })
 
 app.post('/check-image', upload.single('image'), async (req, res) => {
-  if (!req.body.image)
+  if (!req.file)
     return res
       .status(400)
       .json({ message: 'Missing image multipart/form-data' })
