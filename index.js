@@ -1,12 +1,16 @@
 const express = require('express')
 const multer = require('multer')
 const jpeg = require('jpeg-js')
+const cors = require("cors");
+
 
 const tf = require('@tensorflow/tfjs-node')
 const nsfw = require('nsfwjs')
 
 const app = express()
 const upload = multer()
+
+app.use(cors());
 
 let _model
 
